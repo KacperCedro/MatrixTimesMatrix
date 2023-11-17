@@ -17,8 +17,8 @@
   "libraries": {
     "MTM/1.0.0": {
       "type": "project",
-      "path": "../MTM/MTM.csproj",
-      "msbuildProject": "../MTM/MTM.csproj"
+      "path": "../../MTM/MTM.csproj",
+      "msbuildProject": "../../MTM/MTM.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -33,11 +33,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\KacperCedro\\MatrixTimesMatrix\\Example\\Example.csproj",
+      "projectUniqueName": "C:\\KacperCedro\\MatrixTimesMatrix\\Example\\Example\\Example.csproj",
       "projectName": "Example",
-      "projectPath": "C:\\KacperCedro\\MatrixTimesMatrix\\Example\\Example.csproj",
+      "projectPath": "C:\\KacperCedro\\MatrixTimesMatrix\\Example\\Example\\Example.csproj",
       "packagesPath": "C:\\Users\\kcedr\\.nuget\\packages\\",
-      "outputPath": "C:\\KacperCedro\\MatrixTimesMatrix\\Example\\obj\\",
+      "outputPath": "C:\\KacperCedro\\MatrixTimesMatrix\\Example\\Example\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

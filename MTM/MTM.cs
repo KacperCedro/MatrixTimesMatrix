@@ -1,30 +1,30 @@
 ﻿using System.Numerics;
 using System.Security.Cryptography.X509Certificates;
 
-namespace MTM
+namespace MatrixTimesMatrix
 {
-    public class MTM
+    public static class mtm
     {
-        static int GetNumberOfColumns(double[,] matrix)
+        public static int GetNumberOfColumns(double[,] matrix)
         {
             int numberOfColumns = matrix.GetLength(1); ;
             return numberOfColumns;
         }
-        static int GetNumberOfRows(double[,] matrix)
+        public static int GetNumberOfRows(double[,] matrix)
         {
-            int numberOfRows = matrix.GetLength(1); ;
+            int numberOfRows = matrix.GetLength(0); ;
             return numberOfRows;
         }
-        static bool CheckForPossibleMultiplication(double[,] matrix1, double[,] matrix2)
+        public static bool CheckForPossibleMultiplication(double[,] matrix1, double[,] matrix2)
         {
             bool isPossible = false;
-            if (GetNumberOfRows(matrix1) == GetNumberOfColumns(matrix2))
+            if (GetNumberOfColumns(matrix1) == GetNumberOfRows(matrix2))
             {
                 isPossible = true;
             }
             return isPossible;
         }
-        static bool CheckForPossibleAdditionOrSubstraction(double[,] matrix1, double[,] matrix2)
+        public static bool CheckForPossibleAdditionOrSubstraction(double[,] matrix1, double[,] matrix2)
         {
             bool isPossible = false;
             if ((GetNumberOfColumns(matrix1) == GetNumberOfColumns(matrix2)) && (GetNumberOfRows(matrix1) == GetNumberOfRows(matrix2)))
@@ -33,7 +33,7 @@ namespace MTM
             }
             return isPossible;
         }
-        static double[,] Multiply(double[,] matrix1, double[,] matrix2)
+        public static double[,] Multiply(double[,] matrix1, double[,] matrix2)
         {
             double[,] result;
             if (CheckForPossibleMultiplication(matrix1, matrix2))
@@ -59,7 +59,7 @@ namespace MTM
                 throw new Exception("invalid matrix size");
             }
         }
-        static double[,] Multiply(double[,] matrix, double number)
+        public static double[,] Multiply(double[,] matrix, double number)
         {
             double[,] result = new double[GetNumberOfRows(matrix), GetNumberOfColumns(matrix)];
             for (int row = 0; row < GetNumberOfRows(matrix); row++)
@@ -71,7 +71,7 @@ namespace MTM
             }
             return result;
         }
-        static double[,] Add(double[,] matrix1, double[,] matrix2)
+        public static double[,] Add(double[,] matrix1, double[,] matrix2)
         {
             double[,] result;
             if (CheckForPossibleAdditionOrSubstraction(matrix1, matrix2))
@@ -91,7 +91,7 @@ namespace MTM
                 throw new Exception("invalid matrix size");
             }
         }
-        static double[,] Substract(double[,] matrix1, double[,] matrix2)
+        public static double[,] Substract(double[,] matrix1, double[,] matrix2)
         {
             double[,] result;
             if (CheckForPossibleAdditionOrSubstraction(matrix1, matrix2))
