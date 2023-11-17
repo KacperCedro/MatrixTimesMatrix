@@ -1,0 +1,12 @@
+C:\KacperCedro\MatrixTimesMatrix\MTM\obj\Debug\net6.0\MTM.csproj.AssemblyReference.cache
+C:\KacperCedro\MatrixTimesMatrix\MTM\obj\Debug\net6.0\MTM.GeneratedMSBuildEditorConfig.editorconfig
+C:\KacperCedro\MatrixTimesMatrix\MTM\obj\Debug\net6.0\MTM.AssemblyInfoInputs.cache
+C:\KacperCedro\MatrixTimesMatrix\MTM\obj\Debug\net6.0\MTM.AssemblyInfo.cs
+C:\KacperCedro\MatrixTimesMatrix\MTM\obj\Debug\net6.0\MTM.csproj.CoreCompileInputs.cache
+C:\KacperCedro\MatrixTimesMatrix\MTM\bin\Debug\net6.0\MTM.deps.json
+C:\KacperCedro\MatrixTimesMatrix\MTM\bin\Debug\net6.0\MTM.dll
+C:\KacperCedro\MatrixTimesMatrix\MTM\bin\Debug\net6.0\MTM.pdb
+C:\KacperCedro\MatrixTimesMatrix\MTM\obj\Debug\net6.0\MTM.dll
+C:\KacperCedro\MatrixTimesMatrix\MTM\obj\Debug\net6.0\refint\MTM.dll
+C:\KacperCedro\MatrixTimesMatrix\MTM\obj\Debug\net6.0\MTM.pdb
+C:\KacperCedro\MatrixTimesMatrix\MTM\obj\Debug\net6.0\ref\MTM.dll
