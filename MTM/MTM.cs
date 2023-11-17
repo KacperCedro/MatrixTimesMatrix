@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using System.Numerics;
+using System.Security.Cryptography.X509Certificates;
 
 namespace MTM
 {
@@ -13,6 +14,24 @@ namespace MTM
         {
             int numberOfRows = matrix.GetLength(1); ;
             return numberOfRows;
+        }
+        static bool CheckForPossibleMultiplication(double[,] matrix1, double[,] matrix2)
+        {
+            bool isPossible = false;
+            if (GetNumberOfRows(matrix1) == GetNumberOfColumns(matrix2))
+            {
+                isPossible = true;
+            }
+            return isPossible;
+        }
+        static bool CheckForPossibleAdditionOrSubstraction(double[,] matrix1, double[,] matrix2)
+        {
+            bool isPossible = false;
+            if ((GetNumberOfColumns(matrix1) == GetNumberOfColumns(matrix2)) && (GetNumberOfRows(matrix1) == GetNumberOfRows(matrix2)))
+            {
+                isPossible = true;
+            }
+            return isPossible;
         }
         static double[,] Multiply(double[,] matrix1, double[,] matrix2)
         {
@@ -40,14 +59,58 @@ namespace MTM
                 throw new Exception("invalid matrix size");
             }
         }
-        static bool CheckForPossibleMultiplication(double[,] matrix1, double[,] matrix2)
+        static double[,] Multiply(double[,] matrix, double number)
         {
-            bool isPossible = false;
-            if (GetNumberOfRows(matrix1) == GetNumberOfColumns(matrix2))
+            double[,] result = new double[GetNumberOfRows(matrix), GetNumberOfColumns(matrix)];
+            for (int row = 0; row < GetNumberOfRows(matrix); row++)
             {
-                isPossible = true;
+                for (int column = 0; column < GetNumberOfColumns(matrix); column++)
+                {
+                    result[row, column] = matrix[row, column] * number;
+                }
             }
-            return isPossible;
+            return result;
         }
+        static double[,] Add(double[,] matrix1, double[,] matrix2)
+        {
+            double[,] result;
+            if (CheckForPossibleAdditionOrSubstraction(matrix1, matrix2))
+            {
+                result = new double[GetNumberOfRows(matrix1), GetNumberOfColumns(matrix1)];
+                for (int row = 0; row < GetNumberOfRows(matrix1); row++)
+                {
+                    for (int column = 0; column < GetNumberOfColumns(matrix1); column++)
+                    {
+                        result[row, column] = matrix1[row, column] + matrix2[row, column];
+                    }
+                }
+                return result;
+            }
+            else
+            {
+                throw new Exception("invalid matrix size");
+            }
+        }
+        static double[,] Substract(double[,] matrix1, double[,] matrix2)
+        {
+            double[,] result;
+            if (CheckForPossibleAdditionOrSubstraction(matrix1, matrix2))
+            {
+                result = new double[GetNumberOfRows(matrix1), GetNumberOfColumns(matrix1)];
+                for (int row = 0; row < GetNumberOfRows(matrix1); row++)
+                {
+                    for (int column = 0; column < GetNumberOfColumns(matrix1); column++)
+                    {
+                        result[row, column] = matrix1[row, column] - matrix2[row, column];
+                    }
+                }
+                return result;
+            }
+            else
+            {
+                throw new Exception("invalid matrix size");
+            }
+        }
+
     }
 }
