@@ -3,7 +3,7 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace MatrixTimesMatrix
 {
-    public static class mtm
+    public static class MTM
     {
         public static int GetNumberOfColumns(double[,] matrix)
         {
