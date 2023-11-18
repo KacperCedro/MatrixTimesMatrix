@@ -4,6 +4,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
+
         double[,] matrix1 = { { 2, 2 }, { 3, 4 } };
         double[,] matrix2 = { { 4, 2 }, { 6, 3 }};
         double[,] result = MTM.Multiply(matrix1, matrix2);
